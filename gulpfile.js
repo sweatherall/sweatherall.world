@@ -19,6 +19,8 @@ gulp.task('css', function(){
   return gulp.src(lessFiles)
     .pipe(less())
     .pipe(concat('styles.css'))
+    .pipe(gulp.dest(lessDest))
+    .pipe(rename('styles.min.css'))
     .pipe(minifyCSS())
     .pipe(gulp.dest(lessDest))
 });
