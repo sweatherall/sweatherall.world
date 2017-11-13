@@ -6,16 +6,16 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 
-var lessFiles = 'src/**/*.less';
+var lessFiles = 'src/**/**/*.less';
 var lessDest = 'build/css';
 
-gulp.task('html', function(){
-  return gulp.src('src/*/*.pug')
+gulp.task('pug', function(){
+  return gulp.src('src/**/**/*.pug')
     .pipe(pug())
     .pipe(gulp.dest('build/html'))
 });
 
-gulp.task('css', function(){
+gulp.task('less', function(){
   return gulp.src(lessFiles)
     .pipe(less())
     .pipe(concat('styles.css'))
@@ -25,4 +25,4 @@ gulp.task('css', function(){
     .pipe(gulp.dest(lessDest))
 });
 
-gulp.task('default', [ 'html', 'css' ]);
+gulp.task('all', [ 'pug', 'less' ]);
