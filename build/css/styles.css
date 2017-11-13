@@ -1,8 +1,3 @@
-#wrapper {
-  background: #15004c;
-  height: 100vh;
-}
-
 #sawwaves_container {
   padding: 8em 0 0 0;
   text-align: center;
@@ -39,6 +34,11 @@
     /* 0-length stroke,
                                 1000-length gap */
   }
+}
+
+#wrapper {
+  background: #00011B;
+  height: 100vh;
 }
 
 html {
