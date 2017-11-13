@@ -9,10 +9,13 @@ var uglify = require('gulp-uglify');
 var lessFiles = 'src/**/**/*.less';
 var lessDest = 'build/css';
 
+var pugFiles = 'src/**/**/*.pug';
+var pugDest = 'build/html';
+
 gulp.task('pug', function(){
-  return gulp.src('src/**/**/*.pug')
+  return gulp.src(pugFiles)
     .pipe(pug())
-    .pipe(gulp.dest('build/html'))
+    .pipe(gulp.dest(pugDest))
 });
 
 gulp.task('less', function(){

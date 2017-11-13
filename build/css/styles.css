@@ -3,6 +3,44 @@
   height: 100vh;
 }
 
+#sawwaves_container {
+  padding: 8em 0 0 0;
+  text-align: center;
+}
+#wave1 {
+  animation: dash 3s linear alternate infinite;
+}
+#wave2 {
+  animation: reversedash 3s linear alternate infinite;
+}
+#wave3 {
+  animation: dash 3s linear alternate infinite;
+}
+@keyframes dash {
+  from {
+    stroke-dasharray: 0 810;
+    /* zero-length stroke,
+                                1000-length gap */
+  }
+  to {
+    stroke-dasharray: 810 0;
+    /* 1000-length stroke,
+                                zero-length gap */
+  }
+}
+@keyframes reversedash {
+  from {
+    stroke-dasharray: 810 0;
+    /* 1000-length stroke,
+                                0-length gap */
+  }
+  to {
+    stroke-dasharray: 0 810;
+    /* 0-length stroke,
+                                1000-length gap */
+  }
+}
+
 html {
   height: 100%;
 }
