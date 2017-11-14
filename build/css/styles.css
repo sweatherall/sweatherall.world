@@ -26,36 +26,23 @@
   text-align: center;
 }
 #wave1 {
-  animation: dash 3s linear alternate infinite;
+  stroke-dasharray: 810 810;
+  animation: dash 30s linear infinite;
 }
 #wave2 {
-  animation: reversedash 3s linear alternate infinite;
+  stroke-dasharray: 810 810;
+  animation: dash 30s linear reverse infinite;
 }
 #wave3 {
-  animation: dash 3s linear alternate infinite;
+  stroke-dasharray: 810 810;
+  animation: dash 30s linear infinite;
 }
 @keyframes dash {
-  from {
-    stroke-dasharray: 0 810;
-    /* zero-length stroke,
-                                1000-length gap */
+  0% {
+    stroke-dashoffset: 8100;
   }
-  to {
-    stroke-dasharray: 810 0;
-    /* 1000-length stroke,
-                                zero-length gap */
-  }
-}
-@keyframes reversedash {
-  from {
-    stroke-dasharray: 810 0;
-    /* 1000-length stroke,
-                                0-length gap */
-  }
-  to {
-    stroke-dasharray: 0 810;
-    /* 0-length stroke,
-                                1000-length gap */
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 
