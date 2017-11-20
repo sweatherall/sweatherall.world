@@ -21,42 +21,6 @@
   }
 }
 
-#sawwaves_container {
-  padding: 8em 0 0 0;
-  text-align: center;
-}
-#wave1 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear infinite;
-}
-#wave2 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 810;
-  animation: dashforward 30s linear infinite;
-}
-#wave3 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear infinite;
-}
-@keyframes dashforward {
-  0% {
-    stroke-dashoffset: 810;
-  }
-  100% {
-    stroke-dashoffset: 8910;
-  }
-}
-@keyframes dashreverse {
-  0% {
-    stroke-dashoffset: 8910;
-  }
-  100% {
-    stroke-dashoffset: 810;
-  }
-}
-
 html {
   height: 100%;
 }
@@ -190,4 +154,42 @@ a img {
 }
 :focus {
   outline: 0;
+}
+
+#sawwaves_container {
+  padding: 8em 0 0 0;
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+}
+#wave1 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 8910;
+  animation: dashreverse 30s linear infinite;
+}
+#wave2 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 810;
+  animation: dashforward 30s linear infinite;
+}
+#wave3 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 8910;
+  animation: dashreverse 30s linear infinite;
+}
+@keyframes dashforward {
+  0% {
+    stroke-dashoffset: 810;
+  }
+  100% {
+    stroke-dashoffset: 8910;
+  }
+}
+@keyframes dashreverse {
+  0% {
+    stroke-dashoffset: 8910;
+  }
+  100% {
+    stroke-dashoffset: 810;
+  }
 }
