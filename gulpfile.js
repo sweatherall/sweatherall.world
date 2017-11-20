@@ -12,6 +12,13 @@ var lessDest = 'build/css';
 var pugFiles = 'src/**/**/*.pug';
 var pugDest = 'build/html';
 
+gulp.task('index', function(){
+  return gulp.src('src/components/home/home.pug')
+    .pipe(pug())
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest('.'))
+});
+
 gulp.task('pug', function(){
   return gulp.src(pugFiles)
     .pipe(pug())
