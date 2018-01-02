@@ -35,4 +35,4 @@ gulp.task('less', function(){
     .pipe(gulp.dest(lessDest))
 });
 
-gulp.task('all', [ 'pug', 'less' ]);
+gulp.task('all', [ 'pug', 'less', 'index' ]);
