@@ -1,6 +1,94 @@
+#wrapper {
+  background: #00011B;
+  height: 100vh;
+  animation: bgchange 60s linear infinite;
+}
+#underconstruction_msg {
+  text-align: center;
+}
+.underconstruction {
+  font-family: sequi, sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: .2em;
+}
+@keyframes bgchange {
+  0% {
+    background-color: #00011B;
+  }
+  25% {
+    background-color: #15004C;
+  }
+  50% {
+    background-color: #5E1734;
+  }
+  90% {
+    background-color: #15044B;
+  }
+  100% {
+    background-color: #00011B;
+  }
+}
+
+#sawwaves_container {
+  padding: 8em 0 0 0;
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+}
+#wave1 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 8910;
+  animation: dashreverse 30s linear infinite;
+}
+#wave2 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 810;
+  animation: dashforward 30s linear infinite;
+}
+#wave3 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 8910;
+  animation: dashreverse 30s linear infinite;
+}
+@keyframes dashforward {
+  0% {
+    stroke-dashoffset: 810;
+  }
+  100% {
+    stroke-dashoffset: 8910;
+  }
+}
+@keyframes dashreverse {
+  0% {
+    stroke-dashoffset: 8910;
+  }
+  100% {
+    stroke-dashoffset: 810;
+  }
+}
+
+#social-media-links {
+  margin: 2em auto 1em auto;
+  max-width: 450px;
+}
+.social-links-container {
+  text-align: center;
+}
+.social-link {
+  display: inline-block;
+  width: 25%;
+  transition: all .3s linear;
+}
+.social-link:nth-child(even):hover {
+  transform: rotate(20deg);
+}
+.social-link:nth-child(odd):hover {
+  transform: rotate(-20deg);
+}
+
 @font-face {
   font-family: "sequi";
-  src: url("../../src/fonts/Sequi_light.otf");
+  src: url("../../src/assets/fonts/Sequi_light.otf");
 }
 
 html {
@@ -136,92 +224,4 @@ a img {
 }
 :focus {
   outline: 0;
-}
-
-#wrapper {
-  background: #00011B;
-  height: 100vh;
-  animation: bgchange 60s linear infinite;
-}
-#underconstruction_msg {
-  text-align: center;
-}
-.underconstruction {
-  font-family: sequi, sans-serif;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: .2em;
-}
-@keyframes bgchange {
-  0% {
-    background-color: #00011B;
-  }
-  25% {
-    background-color: #15004C;
-  }
-  50% {
-    background-color: #5E1734;
-  }
-  90% {
-    background-color: #15044B;
-  }
-  100% {
-    background-color: #00011B;
-  }
-}
-
-#sawwaves_container {
-  padding: 8em 0 0 0;
-  text-align: center;
-  max-width: 450px;
-  margin: 0 auto;
-}
-#wave1 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear infinite;
-}
-#wave2 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 810;
-  animation: dashforward 30s linear infinite;
-}
-#wave3 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear infinite;
-}
-@keyframes dashforward {
-  0% {
-    stroke-dashoffset: 810;
-  }
-  100% {
-    stroke-dashoffset: 8910;
-  }
-}
-@keyframes dashreverse {
-  0% {
-    stroke-dashoffset: 8910;
-  }
-  100% {
-    stroke-dashoffset: 810;
-  }
-}
-
-#social-media-links {
-  margin: 2em auto 1em auto;
-  max-width: 450px;
-}
-.social-links-container {
-  text-align: center;
-}
-.social-link {
-  display: inline-block;
-  width: 25%;
-  transition: all .3s linear;
-}
-.social-link:nth-child(even):hover {
-  transform: rotate(20deg);
-}
-.social-link:nth-child(odd):hover {
-  transform: rotate(-20deg);
 }
