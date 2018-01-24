@@ -1,6 +1,6 @@
 #wrapper {
-  background: #00011B;
-  height: 100vh;
+  background: #000;
+  max-height: 100%;
 }
 #underconstruction_msg {
   text-align: center;
@@ -25,44 +25,6 @@
   }
   100% {
     background-color: #00011B;
-  }
-}
-
-#sawwaves_container {
-  padding: 8em 0 0 0;
-  text-align: center;
-  max-width: 450px;
-  margin: 0 auto;
-}
-#wave1 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear infinite;
-}
-#wave2 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 810;
-  animation: dashforward 30s linear infinite;
-}
-#wave3 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear infinite;
-}
-@keyframes dashforward {
-  0% {
-    stroke-dashoffset: 810;
-  }
-  100% {
-    stroke-dashoffset: 8910;
-  }
-}
-@keyframes dashreverse {
-  0% {
-    stroke-dashoffset: 8910;
-  }
-  100% {
-    stroke-dashoffset: 810;
   }
 }
 
@@ -94,7 +56,15 @@ html {
   height: 100%;
 }
 body {
-  min-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: visible;
+  overflow: auto;
+  background: linear-gradient(#09dcc8, #4d62d8);
+  padding: 5px;
 }
 
 /**
@@ -223,4 +193,42 @@ a img {
 }
 :focus {
   outline: 0;
+}
+
+#sawwaves_container {
+  padding: 8em 0 0 0;
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+}
+#wave1 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 8910;
+  animation: dashreverse 30s linear 1;
+}
+#wave2 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 810;
+  animation: dashforward 30s linear 1;
+}
+#wave3 {
+  stroke-dasharray: 810 810;
+  stroke-dashoffset: 8910;
+  animation: dashreverse 30s linear 1;
+}
+@keyframes dashforward {
+  0% {
+    stroke-dashoffset: 810;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dashreverse {
+  0% {
+    stroke-dashoffset: 8910;
+  }
+  100% {
+    stroke-dashoffset: 810;
+  }
 }
