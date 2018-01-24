@@ -7,20 +7,20 @@
 
 #wave1 {
   stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear 1;
+  stroke-dashoffset: 810;
+  animation: dashreverse 1.3s linear forwards reverse;
 }
 
 #wave2 {
   stroke-dasharray: 810 810;
   stroke-dashoffset: 810;
-  animation: dashforward 30s linear 1;
+  animation: dashforward 1.3s linear forwards normal;
 }
 
 #wave3 {
   stroke-dasharray: 810 810;
-  stroke-dashoffset: 8910;
-  animation: dashreverse 30s linear 1;
+  stroke-dashoffset: 810;
+  animation: dashreverse 1.3s linear forwards reverse;
 }
 
 
@@ -35,7 +35,7 @@
 
 @keyframes dashreverse {
   0% {
-    stroke-dashoffset: 8910;
+    stroke-dashoffset: 1620;
   }
   100% {
     stroke-dashoffset: 810;
