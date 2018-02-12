@@ -21,11 +21,14 @@ html(class='no-js')
     link(rel='stylesheet', href='build/css/styles.min.css')
       
     script.
-      document.body.classList.add('loading');
-      window.addEventListener("load", showPage);
-      function showPage() { document.body.classList.remove('loading'); }
-
-
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        document.body.classList.add("loading");
+        window.addEventListener("load", startAnimations);
+        function startAnimations() { 
+          setTimeout(function(){ document.body.classList.remove("loading"); }, 800);
+        }
+      });
+    
   body
     
     //if lt IE 8
