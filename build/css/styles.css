@@ -30,6 +30,32 @@
     background-color: #00011B;
   }
 }
+.loading *,
+.loading *:before,
+.loading *:after {
+  animation-play-state: paused !important;
+}
+
+#social-media-links {
+  position: absolute;
+  bottom: 13px;
+  right: 10px;
+}
+.social-links-container {
+  text-align: center;
+}
+.social-link {
+  display: inline-block;
+  margin: 0 .5em;
+  transition: all .3s linear;
+  width: 30px;
+}
+.social-link:nth-child(even):hover {
+  transform: rotate(20deg);
+}
+.social-link:nth-child(odd):hover {
+  transform: rotate(-20deg);
+}
 
 #sawwaves_container {
   padding: 8em 0 0 0;
@@ -67,27 +93,6 @@
   100% {
     stroke-dashoffset: 810;
   }
-}
-
-#social-media-links {
-  position: absolute;
-  bottom: 13px;
-  right: 10px;
-}
-.social-links-container {
-  text-align: center;
-}
-.social-link {
-  display: inline-block;
-  margin: 0 .5em;
-  transition: all .3s linear;
-  width: 30px;
-}
-.social-link:nth-child(even):hover {
-  transform: rotate(20deg);
-}
-.social-link:nth-child(odd):hover {
-  transform: rotate(-20deg);
 }
 
 @font-face {
