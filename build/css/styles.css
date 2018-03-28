@@ -36,36 +36,6 @@
   animation-play-state: paused !important;
 }
 
-#social-media-links {
-  position: absolute;
-  bottom: 13px;
-  right: 10px;
-  left: 10px;
-}
-.social-links-container {
-  text-align: center;
-  max-width: 450px;
-  margin: 0 auto;
-}
-.social-link {
-  display: inline-block;
-  margin: 0;
-  transition: all .3s linear;
-  width: 30%;
-  height: 30px;
-}
-.social-link:nth-child(even):hover {
-  transform: rotate(20deg);
-}
-.social-link:nth-child(odd):hover {
-  transform: rotate(-20deg);
-}
-@media screen and (max-device-width: 401px) {
-  .social-link {
-    height: 50px;
-  }
-}
-
 #sawwaves_container {
   padding: 8em 0 0 0;
   text-align: center;
@@ -104,6 +74,53 @@
   }
 }
 
+#social-media-links {
+  position: absolute;
+  bottom: 13px;
+  right: 10px;
+  left: 10px;
+}
+.social-links-container {
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.social-link {
+  display: inline-block;
+  margin: 0;
+  transition: all .3s linear;
+  width: 30%;
+  height: 30px;
+}
+.social-link:nth-child(even):hover {
+  transform: rotate(20deg);
+}
+.social-link:nth-child(odd):hover {
+  transform: rotate(-20deg);
+}
+.social-link.github {
+  animation: iconfadein 2s linear;
+}
+.social-link.instagram {
+  animation: iconfadein 3s linear;
+}
+.social-link.tumblr {
+  animation: iconfadein 4s linear;
+}
+@keyframes iconfadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-device-width: 401px) {
+  .social-link {
+    height: 50px;
+  }
+}
+
 @font-face {
   font-family: "sequi";
   src: url("../../src/assets/fonts/Sequi_light.otf");
@@ -122,6 +139,15 @@ body {
   overflow: auto;
   background: linear-gradient(#09dcc8, #4d62d8);
   padding: 5px;
+  animation: bgfadein 1s linear;
+}
+@keyframes bgfadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /**

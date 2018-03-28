@@ -17,12 +17,17 @@
   transition: all .3s linear;
   width: 30%;
   height: 30px;
-  &:nth-child(even):hover {
-    transform: rotate(20deg);
-  }
-  &:nth-child(odd):hover {
-    transform: rotate(-20deg);
-  }
+  &:nth-child(even):hover { transform: rotate(20deg); }
+  &:nth-child(odd):hover { transform: rotate(-20deg); }
+}
+
+.social-link.github { animation: iconfadein 2s linear; }
+.social-link.instagram { animation: iconfadein 3s linear; }
+.social-link.tumblr { animation: iconfadein 4s linear; }
+
+@keyframes iconfadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @media screen and (max-device-width: 401px) {
