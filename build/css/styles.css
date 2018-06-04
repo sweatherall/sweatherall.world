@@ -36,35 +36,52 @@
   animation-play-state: paused !important;
 }
 
-#sawwaves_container {
+#sawwaves_container,
+#static-container {
   padding: 8em 0 0 0;
   text-align: center;
   max-width: 450px;
   margin: 0 auto;
 }
-#wave1 {
+#animated-container {
+  z-index: 3;
+}
+#animated-container #wave1 {
+  z-index: 3;
   stroke-dasharray: 810 810;
   stroke-dashoffset: 810;
   animation: dashreverse 1.3s linear forwards reverse;
 }
-#wave1:hover {
-  animation: dashreverse_infinite 1.3s linear forwards reverse;
+#animated-container #wave1:hover {
+  animation: dashforward 1.3s linear forwards reverse;
 }
-#wave2 {
+#animated-container #wave2 {
+  z-index: 3;
   stroke-dasharray: 810 810;
   stroke-dashoffset: 810;
   animation: dashforward 1.3s linear forwards normal;
 }
-#wave2:hover {
-  animation: dashforward_infinite 1.3s linear forwards normal;
+#animated-container #wave2:hover {
+  animation: dashreverse 1.3s linear forwards normal;
 }
-#wave3 {
+#animated-container #wave3 {
+  z-index: 3;
   stroke-dasharray: 810 810;
   stroke-dashoffset: 810;
   animation: dashreverse 1.3s linear forwards reverse;
 }
-#wave3:hover {
-  animation: dashreverse_infinite 1.3s linear forwards reverse;
+#animated-container #wave3:hover {
+  animation: dashforward 1.3s linear forwards reverse;
+}
+#static-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-top: 7.8em;
+  padding-left: 1em;
+  opacity: .3;
+  pointer-events: none;
 }
 @keyframes dashforward {
   0% {
@@ -74,23 +91,7 @@
     stroke-dashoffset: 0;
   }
 }
-@keyframes dashforward_infinite {
-  0% {
-    stroke-dashoffset: 810;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
 @keyframes dashreverse {
-  0% {
-    stroke-dashoffset: 1620;
-  }
-  100% {
-    stroke-dashoffset: 810;
-  }
-}
-@keyframes dashreverse_infinite {
   0% {
     stroke-dashoffset: 1620;
   }

@@ -1,37 +1,54 @@
-#sawwaves_container {
+#sawwaves_container,
+#static-container {
   padding: 8em 0 0 0;
   text-align: center;
   max-width: 450px;
   margin: 0 auto;
 }
 
-#wave1 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 810;
-  animation: dashreverse 1.3s linear forwards reverse;
-  &:hover {
-    animation: dashreverse_infinite 1.3s linear forwards reverse;
+#animated-container {
+  z-index: 3;
+  #wave1 {
+    z-index: 3;
+    stroke-dasharray: 810 810;
+    stroke-dashoffset: 810;
+    animation: dashreverse 1.3s linear forwards reverse;
+    &:hover {
+      animation: dashforward 1.3s linear forwards reverse;
+    }
+  }
+
+  #wave2 {
+    z-index: 3;
+    stroke-dasharray: 810 810;
+    stroke-dashoffset: 810;
+    animation: dashforward 1.3s linear forwards normal;
+    &:hover {
+      animation: dashreverse 1.3s linear forwards normal;
+    }
+  }
+
+  #wave3 {
+    z-index: 3;
+    stroke-dasharray: 810 810;
+    stroke-dashoffset: 810;
+    animation: dashreverse 1.3s linear forwards reverse;
+    &:hover {
+      animation: dashforward 1.3s linear forwards reverse;
+    }
   }
 }
 
-#wave2 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 810;
-  animation: dashforward 1.3s linear forwards normal;
-  &:hover {
-    animation: dashforward_infinite 1.3s linear forwards normal;
-  }
+#static-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-top: 7.8em;
+  padding-left: 1em;
+  opacity: .4;
+  pointer-events: none;
 }
-
-#wave3 {
-  stroke-dasharray: 810 810;
-  stroke-dashoffset: 810;
-  animation: dashreverse 1.3s linear forwards reverse;
-  &:hover {
-    animation: dashreverse_infinite 1.3s linear forwards reverse;
-  }
-}
-
 
 @keyframes dashforward {
   0% {
@@ -42,25 +59,7 @@
   }
 }
 
-@keyframes dashforward_infinite {
-  0% {
-    stroke-dashoffset: 810;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes dashreverse {
-  0% {
-    stroke-dashoffset: 1620;
-  }
-  100% {
-    stroke-dashoffset: 810;
-  }
-}
-
-@keyframes dashreverse_infinite {
   0% {
     stroke-dashoffset: 1620;
   }
