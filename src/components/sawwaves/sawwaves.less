@@ -10,8 +10,7 @@
   stroke-dashoffset: 810;
   animation: dashreverse 1.3s linear forwards reverse;
   &:hover {
-    animation: dashforward 1.3s linear forwards reverse;
-    background: #578490;
+    animation: dashreverse_infinite 1.3s linear forwards reverse;
   }
 }
 
@@ -20,8 +19,7 @@
   stroke-dashoffset: 810;
   animation: dashforward 1.3s linear forwards normal;
   &:hover {
-    animation: dashreverse 1.3s linear forwards normal;
-    background: #578490;
+    animation: dashforward_infinite 1.3s linear forwards normal;
   }
 }
 
@@ -30,8 +28,7 @@
   stroke-dashoffset: 810;
   animation: dashreverse 1.3s linear forwards reverse;
   &:hover {
-    animation: dashforward 1.3s linear forwards reverse;
-    background: #578490;
+    animation: dashreverse_infinite 1.3s linear forwards reverse;
   }
 }
 
@@ -45,7 +42,25 @@
   }
 }
 
+@keyframes dashforward_infinite {
+  0% {
+    stroke-dashoffset: 810;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes dashreverse {
+  0% {
+    stroke-dashoffset: 1620;
+  }
+  100% {
+    stroke-dashoffset: 810;
+  }
+}
+
+@keyframes dashreverse_infinite {
   0% {
     stroke-dashoffset: 1620;
   }
