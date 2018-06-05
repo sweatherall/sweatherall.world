@@ -7,37 +7,33 @@
 }
 
 #animated-container {
-  z-index: 3;
-  #wave1 {
-    z-index: 3;
+  #wave1, #wave2, #wave3 {
     stroke-dasharray: 810 810;
     stroke-dashoffset: 810;
-    animation: dashreverse 1.3s linear forwards reverse;
-    &:hover {
-      animation: dashforward 1.3s linear forwards reverse;
-    }
+  }
+  #wave1 {
+    // animation: dashreverse 1.3s linear forwards reverse;
+    // &:hover {
+    //   animation: dashforward 1.3s linear forwards reverse;
+    // }
   }
 
   #wave2 {
-    z-index: 3;
-    stroke-dasharray: 810 810;
-    stroke-dashoffset: 810;
-    animation: dashforward 1.3s linear forwards normal;
-    &:hover {
-      animation: dashreverse 1.3s linear forwards normal;
-    }
+    // animation: dashforward 1.3s linear forwards normal;
+    // &:hover {
+    //   animation: dashreverse 1.3s linear forwards normal;
+    // }
   }
 
   #wave3 {
-    z-index: 3;
-    stroke-dasharray: 810 810;
-    stroke-dashoffset: 810;
-    animation: dashreverse 1.3s linear forwards reverse;
-    &:hover {
-      animation: dashforward 1.3s linear forwards reverse;
-    }
+    // animation: dashreverse 1.3s linear forwards reverse;
+    // &:hover {
+    //   animation: dashforward 1.3s linear forwards reverse;
+    // }
   }
 }
+
+.dash-offset-zero { stroke-dashoffset: 0 !important; }
 
 #static-container {
   position: absolute;
@@ -50,20 +46,20 @@
   pointer-events: none;
 }
 
+.wave-animation-dashforward {
+  animation: dashforward 1.3s linear forwards normal;
+}
+
+.wave-animation-dashreverse {
+  animation: dashreverse 1.3s linear forwards reverse;
+}
+
 @keyframes dashforward {
-  0% {
-    stroke-dashoffset: 810;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
+  0% { stroke-dashoffset: 810; }
+  100% { stroke-dashoffset: 0; }
 }
 
 @keyframes dashreverse {
-  0% {
-    stroke-dashoffset: 1620;
-  }
-  100% {
-    stroke-dashoffset: 810;
-  }
+  0% { stroke-dashoffset: 1620; }
+  100% { stroke-dashoffset: 810; }
 }
