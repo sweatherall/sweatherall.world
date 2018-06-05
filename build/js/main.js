@@ -37,12 +37,15 @@
     wave3.addEventListener("animationend", removeDashReverseClass);
     // step 3: on hover, add back animation class to each wave
     wave1.addEventListener("mouseover", function() {
+      wave1.classList = [];
       return wave1.classList.add("wave-animation-dashreverse");
     });
     wave2.addEventListener("mouseover", function() {
+      wave2.classList = [];
       return wave2.classList.add("wave-animation-dashforward");
     });
     return wave3.addEventListener("mouseover", function() {
+      wave3.classList = [];
       return wave3.classList.add("wave-animation-dashreverse");
     });
   });

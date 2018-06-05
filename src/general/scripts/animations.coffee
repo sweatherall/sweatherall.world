@@ -40,10 +40,13 @@ document.addEventListener "DOMContentLoaded", (event) ->
 
   # step 3: on hover, add back animation class to each wave
   wave1.addEventListener "mouseover", () ->
+    wave1.classList = []
     wave1.classList.add "wave-animation-dashreverse"
 
   wave2.addEventListener "mouseover", () ->
+    wave2.classList = []
     wave2.classList.add "wave-animation-dashforward"
 
   wave3.addEventListener "mouseover", () ->
+    wave3.classList = []
     wave3.classList.add "wave-animation-dashreverse"
