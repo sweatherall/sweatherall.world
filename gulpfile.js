@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var pug = require('gulp-pug');
 var less = require('gulp-less');
+var coffee = require('gulp-coffee');
 var minifyCSS = require('gulp-csso');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -11,6 +12,9 @@ var lessDest = 'build/css';
 
 var pugFiles = 'src/**/**/*.pug';
 var pugDest = 'build/html';
+
+var coffeeFiles = 'src/**/**/*.coffee';
+var coffeeDest = 'build/js';
 
 gulp.task('index', function(){
   return gulp.src('src/components/home/home.pug')
@@ -35,4 +39,14 @@ gulp.task('less', function(){
     .pipe(gulp.dest(lessDest))
 });
 
-gulp.task('all', gulp.series( gulp.parallel('pug', 'less'), 'index' ));
+gulp.task('coffee', function(){
+  return gulp.src(coffeeFiles, { sourcemaps: true })
+    .pipe(coffee())
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest(coffeeDest))
+    .pipe(rename('main.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(coffeeDest))
+});
+
+gulp.task('all', gulp.series( gulp.parallel('pug', 'less', 'coffee'), 'index' ));
